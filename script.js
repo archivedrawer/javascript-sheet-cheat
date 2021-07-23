@@ -17,6 +17,7 @@ console.log(typeof function(){})
 console.log(typeof (() => {}))
 
 // variáveis e constantes
+var x;
 x = 4 // variável global => má prática
 console.log(x)
 console.log(typeof x) // x está number
@@ -217,4 +218,60 @@ console.log(Object.keys(curso));
 console.log(Object.values(curso));
 for (const prop in curso) {
   console.log(`${prop}: ${curso[prop]}`);
+}
+
+// PORGRAMAÇÃO PROCEDIMENTAL E FUNÇÕES
+console.log('recap.js');
+// função ==> entrada e saída
+function padleft(palavra, tamanho, caractere = '-') { // parâmetros/argumentos
+  // console.log(arguments);
+  let resp = '';
+  for (let i = 0; i < tamanho - palavra.length; i++) {
+    resp += caractere;
+  }
+  resp += palavra;
+  return resp; // funções não fazem print das coisas
+}
+
+let P = 'teste';
+let T = 20;
+let C = '-';
+// --------------------teste
+// chamar, executar ou invocar
+const resposta = padleft(P, T, C); // argumentos
+console.log(resposta);
+
+// alert(padleft(
+//   prompt('Digite a palavra'),
+//   parseInt(prompt('Digite o tamanho')),
+//   prompt('Digite o caratere')[0] // console.log('abc'[0]); ==> 'a'
+// ));
+
+export function menor(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+// exportar significa liberar para acesso externo
+// export function maior(a, b) {}
+export function minimo(array) {
+  let min = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < min) min = array[i];
+  }
+  return min;
+}
+
+export function maximo(array) {
+  let max = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) max = array[i];
+  }
+  return max;
+}
+
+export function amplitude(array) {
+  return maximo(array) - minimo(array);
 }
