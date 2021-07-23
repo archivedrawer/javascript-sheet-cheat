@@ -124,4 +124,61 @@ if (teste.lenght > 0) console.log(teste)
 teste = {}
 if (teste) console.log(teste)
 
+// CONDICIONAIS
+// console.log(window) // não existe window no vscode
+const v = 5 // prompt('Digite o valor:')
+if (v > 5) {
+  console.log('v é maior que 5');
+}
 
+if (v > 5) {
+  console.log('v é maior que 5');
+} else {
+  console.log('v não é maior que 5');
+}
+
+if (v > 5) {
+  console.log('v é maior que 5');
+} else if (v < 5) {
+  console.log('v é menor que 5');
+} else {
+  console.log('v é 5');
+}
+
+if (v === 5) {
+  console.log('v é 5') //somente esta priemira instrução entra, quando não há chaves
+  console.log('v === 5');
+}
+
+//se, senão
+if (v === 5) console.log('v é 5');
+
+const mes = 9
+// switch/case selecione/caso
+switch (mes) {
+  case 1: console.log('janeiro'); break
+  case 2: console.log('fevereiro'); break
+  case 3: console.log('março'); break
+  case 4: console.log('abril'); break
+  default: console.log('mês inválido');
+}
+
+let texto = ''
+// while, do while, for
+while (texto.length < 80) {
+  texto += '*'
+}
+console.log(texto);
+//for (inicialização; condição; pós-execução)
+for (texto = ''; texto.length < 80; texto += '-');
+console.log(texto);
+
+for (let i = 1; i <= 3; i++) {
+  console.log(`i vale ${i}`);
+}
+
+let I = 1
+while (I <= 3) {
+  console.log(`I vale ${I}`);
+  I++ // i = i + i ==> i += i
+}
