@@ -182,3 +182,39 @@ while (I <= 3) {
   console.log(`I vale ${I}`);
   I++ // i = i + i ==> i += i
 }
+
+const nomes = []
+console.log(nomes);
+const idades = Array(10)
+console.log(idades);
+console.log(idades[9]);
+const sobrenomes = ['Torres', 'Silva', 'Melo']
+                //    0         1        2
+console.log(sobrenomes.length); // comprimento 3
+console.log(idades.length); // comprimento 10
+sobrenomes.push('Ramos')
+console.log(sobrenomes);
+sobrenomes.splice(1, 1) // comprimento
+console.log(sobrenomes);
+sobrenomes.push('Silva')
+console.log(sobrenomes);
+
+for (let i = 0; i < sobrenomes.length; i++) {
+  console.log(sobrenomes[i]);
+}
+// for each // para cada
+for (const sobrenome of sobrenomes) {
+  console.log(sobrenome);
+}
+
+// const curso = ['info', 25]
+const curso = {nome: 'info', vagas: 25}
+console.log(curso);
+console.log(curso['nome']);
+console.log(curso['vagas']);
+for (const c in curso) console.log(c); // imprimir as chaves
+console.log(Object.keys(curso));
+console.log(Object.values(curso));
+for (const prop in curso) {
+  console.log(`${prop}: ${curso[prop]}`);
+}
