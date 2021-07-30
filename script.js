@@ -275,3 +275,80 @@ export function maximo(array) {
 export function amplitude(array) {
   return maximo(array) - minimo(array);
 }
+
+// FUNÇÕES
+
+console.log(divide); // Cannot access 'divide' before initialization
+
+let divide = function(a, b) {
+  return a / b;
+}
+
+console.log(typeof(divide)); // function
+console.log(divide(10, 2)); // 5
+
+console.log(soma(2, 3)); // 5 => chamar função
+
+function soma(a, b) { // decalração de função: sofre hoisting (elevação)
+  return a + b;
+}
+
+// Imediately Invoked Function
+(function multiplica(a, b) {
+  return a * b; // 30
+})(5, 6);
+
+// Arrow Function
+let potencia = (base, expoente) => base ** expoente;
+let quadrado = numero => potencia(numero, numero);
+console.log(potencia(2, 8)); // 256
+
+if (nada()) { // undefined, 0, null
+  console.log('ok');
+} else {
+  console.log('nada'); // nada
+}
+
+function nada() {
+  // nada
+}
+
+function imprimeRetorno(fun) { // Callback
+  console.log(fun()); // Marcio, Algo
+}
+
+function nome() {
+  return 'Marcio';
+}
+
+imprimeRetorno(nome);
+imprimeRetorno(function() {}); // function is not defined
+imprimeRetorno(() => 'Algo'); // React, Vue, Angular
+
+// Callback Hell
+// One Liners Code
+// Code Golfing
+
+function imprime(x, y, ...args) {
+  console.log(x, y); // teste 'new Date()'
+  const a = new Array(arguments);
+  console.log(arguments); // { [Interator] 0: 2, 1: 3, 2: 4, 3: 5, ... }
+  console.log(arguments.length); // 4
+  console.log(arguments[0]); // 2, teste
+  console.log(arguments[1]); // 3, 'new Date()'
+  console.log(arguments[2]); // 4
+  console.log(arguments[3]); // 5
+  console.log(args); // [ 4, 5 ]
+}
+
+imprime(2, 3, 4, 5);
+imprime('teste', new Date(), 4, 5);
+
+// nome
+// ...sobrenomes ... => rest parameters
+function cliente(nome, ...sobrenomes, ...teste) {
+  console.log(nome); // Pedro
+  console.log(sobrenomes); // [ 'Garcia', 'Machado', 3, 34, 3434434, 3434 ]
+}
+
+cliente('Pedro', 'Garcia', 'Machado', 3, 34, 3434434, 3434);
