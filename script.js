@@ -352,3 +352,21 @@ function cliente(nome, ...sobrenomes, ...teste) {
 }
 
 cliente('Pedro', 'Garcia', 'Machado', 3, 34, 3434434, 3434);
+
+// FOR - FOR/IN - FOREACH - FOR/OF
+
+const arr = ['a', 'b', 'c']; // const arr = Array(); => []
+
+// i = 0, 1, 2... => arr[i] = 'a', 'b', 'c'...
+for (let i = 0; i < arr.length; ++i) {
+  console.log(arr[i]);
+}
+for (let i in arr) {
+  console.log(arr[i]);
+}
+
+// v = arr[i] // i = 0, 1, 2...
+arr.forEach((v, i) => console.log(v, i));
+for (const v of arr) {
+  console.log(v);
+}
